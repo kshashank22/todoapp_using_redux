@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
 import TodoButton from "../todobutton/TodoButton";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../../redux/actions";
 import "./TodoForm.css";
+import TodoFilters from "../todofilters/TodoFilters";
+import { todoLists } from "../../redux/selectors/TodoSelectors";
 
 function TodoForm() {
+  const todos = useSelector(todoLists);
   const [inputText, setInputText] = useState("");
   const dispatch = useDispatch();
 
@@ -26,7 +29,7 @@ function TodoForm() {
         value={inputText}
         onChange={(event) => setInputText(event.target.value)}
       />
-      <div>
+      <div className="buttonContainer">
         <TodoButton
           type={"submit"}
           onclick={saveTodo}
@@ -34,6 +37,7 @@ function TodoForm() {
           classname={"addButton"}
         />
       </div>
+      {todos.length > 0 && <TodoFilters />}
     </form>
   );
 }

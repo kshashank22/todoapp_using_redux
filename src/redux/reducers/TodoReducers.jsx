@@ -32,6 +32,21 @@ const TodoReducers = (state = initialState, action) => {
           (eachTodo) => eachTodo.id !== action.id
         ),
       };
+    case "filter-todo":
+      return {
+        ...state,
+        filterTodoStatus: action.filterTodoStatus,
+      };
+    case "set-local-storage":
+      return {
+        ...state,
+        todoList: action.payload,
+      };
+    case "get-local-storage":
+      return {
+        ...state,
+        todoList: action.payload,
+      };
     default:
       return state;
   }

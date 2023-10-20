@@ -19,8 +19,10 @@ const TodoItems = ({ todo, delet, check }) => {
 
   const saveEditTodo = (event) => {
     event.preventDefault();
-    dispatch(updateTodo(todos.id, editText));
-    setEditStatus(null);
+    if (editText !== "") {
+      dispatch(updateTodo(todos.id, editText));
+      setEditStatus(null);
+    }
   };
 
   return (

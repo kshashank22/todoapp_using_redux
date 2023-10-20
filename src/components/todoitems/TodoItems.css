@@ -22,6 +22,8 @@
   font-size: 15px;
   margin-left: 5px;
   margin-bottom: 3px;
+  max-width:20vw;
+  overflow-wrap: break-word;
 }
 .completed {
   background-color: lightgray;

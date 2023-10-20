@@ -1,11 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteTodo, statusTodo } from "../../redux/actions";
+import { TodoSelectors } from "../../redux/selectors/TodoSelectors";
 import TodoItems from "../todoitems/TodoItems";
 import "./TodoLists.css";
 
 const TodoLists = () => {
-  const todos = useSelector((state) => state.todoList);
+  const todos = useSelector(TodoSelectors);
   const dispatch = useDispatch();
 
   return (

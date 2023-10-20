@@ -21,19 +21,11 @@ export const deleteTodo = (id) => ({
 
 export const filterTodo = (filterTodoStatus) => ({
   type: "filter-todo",
-  filterTodoStatus,
+  filterTodoStatus: filterTodoStatus,
 });
 
-export const setLocalStorage = (todoList) => {
-  localStorage.setItem("todokey", JSON.stringify(todoList));
-  return {
-    type: "set-local-storage",
-    payload: todoList,
-  };
-};
-
 export const getLocalStorage = () => {
-  const data = localStorage.getItem("todokey");
+  const data = localStorage.getItem("todoKey");
   const todoStored = data ? JSON.parse(data) : [];
   return {
     type: "get-local-storage",

@@ -1,0 +1,11 @@
+.todoFilterContainer {
+  display: flex;
+  justify-content: center;
+  font-family: "Arial";
+  font-size: 18px;
+  margin: 10px 0px 15px;
+}
+.todoFilterInput {
+  margin-left: 5px;
+  margin-right: 2px;
+}

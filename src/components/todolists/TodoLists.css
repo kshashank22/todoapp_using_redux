@@ -1,0 +1,18 @@
+
+.todoListContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width:95vw;
+    max-height:45vh;
+    overflow:auto;
+}
+.clearButton{
+    background-color:transparent;
+    border:1px solid black;
+    border-radius:8px;
+    color:black;
+    padding:5px 10px;
+    cursor: pointer;
+}
